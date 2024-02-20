@@ -4,6 +4,9 @@
 
 BookBolt is a Vanilla JavaScript application created for [The Odin Project](https://www.theodinproject.com/) to demonstrate practical use of JavaScript's objects, object constructors, and prototypes within the [Library](https://www.theodinproject.com/lessons/node-path-javascript-library) project.
 
+- [App](https://alnah.github.io/bookbolt/)
+- [Code](https://github.com/alnah/bookbolt)
+
 **Features**
 
 BookBolt prioritizes the use of **object constructors and prototypes** over the ES6 class syntax. This approach allows for a deeper understanding of JavaScript's object-oriented programming capabilities.
