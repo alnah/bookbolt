@@ -20,5 +20,3 @@ It Implements the **Model-View-Controller** pattern for structured code manageme
 
 BookBolt is designed to be **fully responsive**, ensuring that the application is accessible and usable across a variety of devices, including desktops, tablets, and smartphones.
  of BookBolt succinctly.
-
-add core functionalytes 
