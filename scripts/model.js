@@ -14,14 +14,14 @@ Book.prototype.toggleBookStatus = function () {
 }
 
 export function Library() {
-  this.books = this.getLibrary() || []
+  this.books = this.getLibrary()
   this.id = this.books.reduce((maxId, book) => Math.max(maxId, book.id), 0) + 1
   this.canPopulate = false
   if (this.books.length === 0) books.map(book => this.addBook(book))
 }
 
 Library.prototype.getLibrary = function () {
-  const books = JSON.parse(localStorage.getItem("Library"))
+  const books = JSON.parse(localStorage.getItem("Library")) || []
   return books.map(book => new Book(book))
 }
 
