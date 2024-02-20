@@ -14,7 +14,7 @@ Book.prototype.toggleBookStatus = function () {
 }
 
 export function Library() {
-  this.books = this.getLibrary()
+  this.books = this.getLibrary() || []
   this.id = this.books.reduce((maxId, book) => Math.max(maxId, book.id), 0) + 1
   this.canPopulate = false
   if (this.books.length === 0) books.map(book => this.addBook(book))
