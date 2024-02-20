@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="styles/normalize.css">
+  <link rel="stylesheet"
+        href="styles/main.css">
+  <script src="scripts/main.js"
+          type="module"
+          defer></script>
+  <title>BookBolt</title>
+</head>
+<body>
+<dialog>
+  <form action="#/hook"
+        method="post"
+        id="form">
+
+    <label for="title"></label>
+    <input type="text"
+           name="title"
+           id="title"
+           placeholder="Book's title"
+           required>
+    <br>
+    <label for="author"></label>
+    <input type="text"
+           name="author"
+           id="author"
+           placeholder="Author"
+           required>
+    <br>
+    <label for="pages"></label>
+    <input type="number"
+           name="pages"
+           id="pages"
+           min="1"
+           max="2000"
+           placeholder="Number of pages"
+           required>
+    <br>
+    <label for="year"></label>
+    <input type="number"
+           name="year"
+           id="year"
+           min="1450"
+           max="#"
+           placeholder="Publishing year"
+           required>
+    <br>
+    <input type="checkbox"
+           id="status"
+           name="status"
+           class="status-checkbox"
+           checked>
+    <label class="status-label"
+           for="status">Read
+    </label>
+
+    <br>
+    <button id="close-add-book-dialog-btn"
+            type="button"
+            autofocus>Close
+    </button>
+    <button type="submit"
+            id="submit-btn">Save Book
+    </button>
+  </form>
+</dialog>
+<header class="container-header">
+  <h1>
+    <span class="material-icons">bolt</span>BookBolt
+  </h1>
+  <div class="container-background">
+    <p><span class="highlight">add</span> your
+      <span class="highlight">titles</span>,</p>
+    <p><span class="highlight">sort</span> your
+      <span class="highlight">books</span>,</p>
+    <p><span class="highlight">manage</span> your <span class="highlight">book collection</span>,
+    </p>
+    <p><span class="highlight">track</span> your <span class="highlight">reading progress</span>.
+    </p>
+
+  </div>
+</header>
+<div class="container-table container">
+  <table>
+    <thead>
+    <tr>
+      <th class="col-header sort-btn"
+          data-sort="title-asc"
+          scope="col">
+        <svg aria-label="sort icon"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 320 512">
+          <path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/>
+        </svg>
+        Title
+      </th>
+      <th class="col-header sort-btn"
+          data-sort="author-asc"
+          scope="col">
+        <svg aria-label="sort icon"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 320 512">
+          <path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/>
+        </svg>
+        Author
+      </th>
+      <th class="col-header sort-btn"
+          data-sort="pages-asc"
+          scope="col">Pages
+        <svg aria-label="sort icon"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 320 512">
+          <path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/>
+        </svg>
+      </th>
+      <th class="col-header sort-btn"
+          data-sort="year-asc"
+          scope="col">Year
+        <svg aria-label="sort icon"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 320 512">
+          <path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/>
+        </svg>
+      </th>
+      <th class="col-header sort-btn"
+          data-sort="status-asc"
+          scope="col">
+        <svg aria-label="sort icon"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 320 512">
+          <path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/>
+        </svg>
+        Read
+      </th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+<div class="container-footer container">
+  <footer>
+    <button class="footer-btn"
+            id="reset-library-btn">Reset
+    </button>
+    <button class="footer-btn"
+            id="populate-library-btn">Populate
+    </button>
+    <button class="footer-btn"
+            id="open-add-book-dialog-btn">Add
+    </button>
+  </footer>
+</div>
+</body>
+</html>
